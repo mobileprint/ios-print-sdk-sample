@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import <MP.h>
+#import <MPPrintItemFactory.h>
 
-@interface ViewController ()
+@interface ViewController () <MPPrintDelegate>
 
 @end
 
@@ -25,8 +27,8 @@
 }
 
 - (IBAction)printButtonTapped:(id)sender {
-    [self showAlert];
-//    [self printSample];
+    //    [self showAlert];
+    [self printSample];
 }
 
 - (void)showAlert
@@ -45,7 +47,22 @@
 
 - (void)printSample
 {
-    
+    UIImage *image = [UIImage imageNamed:@"sample.image.jpg"];
+    MPPrintItem *printItem = [MPPrintItemFactory printItemWithAsset:image];
+    UIViewController *vc = [[MP sharedInstance] printViewControllerWithDelegate:self dataSource:nil printItem:printItem fromQueue:NO settingsOnly:NO];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - MPPrintDelegate
+
+- (void)didFinishPrintFlow:(UIViewController *)printViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)didCancelPrintFlow:(UIViewController *)printViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
