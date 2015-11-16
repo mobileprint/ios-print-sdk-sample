@@ -2,7 +2,7 @@
 //  main.m
 //  PrintSDKSample
 //
-//  Created by James Trask on 11/16/15.
+//  Created by HP Inc. on 11/16/15.
 //  Copyright © 2015 HP. All rights reserved.
 //
 
