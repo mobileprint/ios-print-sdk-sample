@@ -7,11 +7,14 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
+  - MobilePrintSDK (3.0.0)
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - MobilePrintSDK (= 3.0.0)
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  MobilePrintSDK: 67fdd99a833896d4d3f41d6820c483282cd9bb87
 
 COCOAPODS: 0.39.0
