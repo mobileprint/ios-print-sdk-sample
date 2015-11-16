@@ -13,9 +13,12 @@
 		6554E0121BFA4CE800D713F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6554E0101BFA4CE800D713F3 /* Main.storyboard */; };
 		6554E0141BFA4CE800D713F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6554E0131BFA4CE800D713F3 /* Assets.xcassets */; };
 		6554E0171BFA4CE800D713F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6554E0151BFA4CE800D713F3 /* LaunchScreen.storyboard */; };
+		E80732CD82B0015BAD63C509 /* libPods-PrintSDKSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F64D6913C29E60FDF9CBF505 /* libPods-PrintSDKSample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3953D3C8B59E57632C6FAD /* Pods-PrintSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrintSDKSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrintSDKSample/Pods-PrintSDKSample.release.xcconfig"; sourceTree = "<group>"; };
+		5AD7084372B60B56F167F51F /* Pods-PrintSDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrintSDKSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrintSDKSample/Pods-PrintSDKSample.debug.xcconfig"; sourceTree = "<group>"; };
 		6554E0041BFA4CE800D713F3 /* PrintSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6554E0081BFA4CE800D713F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6554E00A1BFA4CE800D713F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		6554E0131BFA4CE800D713F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6554E0161BFA4CE800D713F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6554E0181BFA4CE800D713F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F64D6913C29E60FDF9CBF505 /* libPods-PrintSDKSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PrintSDKSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80732CD82B0015BAD63C509 /* libPods-PrintSDKSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				6554E0061BFA4CE800D713F3 /* PrintSDKSample */,
 				6554E0051BFA4CE800D713F3 /* Products */,
+				AB65544B843B945C9BCDCDD2 /* Pods */,
+				D3768B88E2871205C9F0EA23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AB65544B843B945C9BCDCDD2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AD7084372B60B56F167F51F /* Pods-PrintSDKSample.debug.xcconfig */,
+				2D3953D3C8B59E57632C6FAD /* Pods-PrintSDKSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3768B88E2871205C9F0EA23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F64D6913C29E60FDF9CBF505 /* libPods-PrintSDKSample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6554E01B1BFA4CE800D713F3 /* Build configuration list for PBXNativeTarget "PrintSDKSample" */;
 			buildPhases = (
+				7D68988DA362C3BFB5B23153 /* Check Pods Manifest.lock */,
 				6554E0001BFA4CE800D713F3 /* Sources */,
 				6554E0011BFA4CE800D713F3 /* Frameworks */,
 				6554E0021BFA4CE800D713F3 /* Resources */,
+				B73225218684993A5758750C /* Embed Pods Frameworks */,
+				C33078F2A903C884ED060A2D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D68988DA362C3BFB5B23153 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B73225218684993A5758750C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintSDKSample/Pods-PrintSDKSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C33078F2A903C884ED060A2D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrintSDKSample/Pods-PrintSDKSample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6554E0001BFA4CE800D713F3 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		6554E01C1BFA4CE800D713F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AD7084372B60B56F167F51F /* Pods-PrintSDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PrintSDKSample/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		6554E01D1BFA4CE800D713F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D3953D3C8B59E57632C6FAD /* Pods-PrintSDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PrintSDKSample/Info.plist;
@@ -300,6 +377,7 @@
 				6554E01D1BFA4CE800D713F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
