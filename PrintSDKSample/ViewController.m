@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import <MP.h>
-#import <MPPrintItemFactory.h>
+#import <MobilePrintSDK/MPPrintItemFactory.h>
+#import <MobilePrintSDK/MPPrintManager.h>
 
 @interface ViewController () <MPPrintDelegate>
 
@@ -28,6 +29,8 @@
 
 - (IBAction)printButtonTapped:(id)sender {
     [self printSample];
+//    [self shareSample];
+//    [self directPrintSample];
 }
 
 - (void)showAlert
@@ -50,6 +53,41 @@
     MPPrintItem *printItem = [MPPrintItemFactory printItemWithAsset:image];
     UIViewController *vc = [[MP sharedInstance] printViewControllerWithDelegate:self dataSource:nil printItem:printItem fromQueue:NO settingsOnly:NO];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)shareSample
+{
+    MPPrintActivity *printActivity = [[MPPrintActivity alloc] init];
+    NSArray *applicationActivities = @[printActivity];
+    UIImage *imageToPrint = [UIImage imageNamed:@"sample.image.jpg"];
+    MPPrintItem *printItem = [MPPrintItemFactory printItemWithAsset:imageToPrint];
+    NSArray *activitiesItems = @[printItem];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activitiesItems applicationActivities:applicationActivities];
+    activityViewController.excludedActivityTypes = @[UIActivityTypePrint];
+    activityViewController.completionWithItemsHandler = ^(NSString *activityType, BOOL completed, NSArray *returnedItems, NSError *activityError) {
+        if (completed) {
+            NSLog(@"Activity completed");
+        } else {
+            NSLog(@"Activity NOT completed");
+        }
+    };
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+- (void)directPrintSample
+{
+    MPPrintManager *printManager = [[MPPrintManager alloc] init];
+    UIImage *image = [UIImage imageNamed:@"sample.image.jpg"];
+    MPPrintItem *printItem = [MPPrintItemFactory printItemWithAsset:image];
+    NSError *error;
+    [printManager print:printItem
+              pageRange:nil
+              numCopies:1
+                  error:&error];
+    
+    if (MPPrintManagerErrorNone != error.code) {
+        NSLog(@"%@", error);
+    }
 }
 
 #pragma mark - MPPrintDelegate
